@@ -1,0 +1,22 @@
+{
+  "name" : "dittto/symfony-request-logger",
+  "description" : "Handles logging external requests via guzzle",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "Nick Stacey",
+    "email" : "nick@ditt.to"
+  }],
+  "keywords" : ["logging external requests guzzle"],
+  "license" : ["MIT"],
+  "require-dev" : {
+    "phpunit/phpunit": "^5.7",
+    "symfony/symfony": "~3.3",
+    "symfony/dependency-injection": "^3.0",
+    "guzzlehttp/guzzle": "~6.0",
+    "psr/log": "~1.0"
+  },
+  "autoload" : {
+    "psr-0" : {"Dittto\\RequestLoggerBundle" : ""}
+  },
+  "target-dir" : "Dittto/RequestLoggerBundle"
+}

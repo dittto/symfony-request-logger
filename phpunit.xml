@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit>
+    <testsuites>
+        <testsuite name="AllTests">
+            <directory>Tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>GuzzleMiddleware</directory>
+            <directory>Listener</directory>
+            <directory>Logger</directory>
+        </whitelist>
+    </filter>
+</phpunit>
