@@ -2,7 +2,9 @@
 
 ## What is it?
 
-Any apps we write will, quite often, have cause to make external calls to either our own, or third-party, APIs. This Symfony bundle makes it easy to track how long these requests are taking and return the result via either monolog and/or an additional JSON object that's appended to your output when Symfony's in debug mode.  
+Any apps we write will, quite often, have cause to make external calls to either our own, or third-party, APIs. This Symfony bundle makes it easy to track how long these requests are taking and return the result via either monolog and/or an additional JSON object that's appended to your output when Symfony's in debug mode.
+
+It works by adding extra middleware to Guzzle so we can track when a request is made and either succeeds or fails, and then storing these logs for later output.
 
 ## How to set it up
 
@@ -18,6 +20,8 @@ services:
         alias: 'monolog.logger.external_request'
 ```
 
+
+Useful:
 
 ```yaml
 services:
