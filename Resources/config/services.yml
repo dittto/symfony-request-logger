@@ -16,10 +16,3 @@ services:
         class: Closure
         factory: [ '@dittto.request_logger.middleware', 'onRequest' ]
         arguments: [ '@dittto.request_logger.passthrough' ]
-
-    dittto.request_logger.debug_listener:
-        class: Dittto\RequestLoggerBundle\Listener\JSONDebugListener
-        arguments: [ '@dittto.request_logger', '%kernel.debug%' ]
-        public: false
-        tags:
-            - { name: kernel.event_listener, event: kernel.response, method: 'onKernelResponse' }
