@@ -4,15 +4,13 @@ services:
 
     dittto.request_logger.passthrough:
         class: Dittto\RequestLoggerBundle\Logger\RequestLoggerPassthroughDecorator
-        public: false
         arguments: [ '@dittto.request_logger', '@dittto.request_logger.monolog_channel' ]
 
     dittto.request_logger.middleware:
         class: Dittto\RequestLoggerBundle\GuzzleMiddleware\LoggerMiddleware
-        public: false
         arguments: [ ]
 
     dittto.request_logger.middleware.request:
         class: Closure
         factory: [ '@dittto.request_logger.middleware', 'onRequest' ]
-        arguments: [ '@dittto.request_logger.passthrough' ]
+        arguments: [ '@dittto.request_logger.alias' ]
